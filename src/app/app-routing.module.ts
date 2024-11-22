@@ -3,13 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 
- export const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'employee-list', component: EmployeeListComponent }
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'employee-list', component: EmployeeListComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

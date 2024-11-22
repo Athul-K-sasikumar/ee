@@ -1,0 +1,49 @@
+<!-- Modal -->
+
+<h2 class="r2">Employee list && Add</h2>
+
+<div class="r1">
+  <form  (ngSubmit)="addEmployee()" class="modal-content">
+    <label for="name">Name:</label>
+    <input id="name" type="text" [(ngModel)]="newEmployee.name" name="name" required />
+    <label for="contact">Contact:</label>
+    <input id="contact" type="text" [(ngModel)]="newEmployee.contact" name="contact" required />
+    <label for="email">Email:</label>
+    <input id="email" type="email" [(ngModel)]="newEmployee.email" name="email" required />
+    <label for="address">Address:</label>
+    <input id="address" type="text" [(ngModel)]="newEmployee.address" name="address" required />
+    <button type="submit">Add</button>
+    <button type="button" (click)="closeModal()">Cancel</button>
+  </form>
+</div>
+
+
+
+
+<div class="r3" >
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.contact }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.address }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<h5>//it is diaplaying on the url its not dispalying in the table </h5>
+
+
